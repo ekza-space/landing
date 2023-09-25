@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "regular";
+  src: url("/public/fonts/Audiowide/Audiowide-Regular.ttf") format("truetype");
+}

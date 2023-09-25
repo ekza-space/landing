@@ -1,0 +1,21 @@
+{
+  "name": "ekza-page",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "cp -r ./public ./dist && npx parcel ./src/index.html",
+    "clear": "rm -rf .parcel-cache dist",
+    "build": "rm -rf build && parcel build --dist-dir build src/index.html --no-source-maps && cp -r ./public/* ./build",
+    "deploy": "yarn build && scp -r ./build/* vds-amster:/var/www/ekza/html"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "postcss": "^8.4.30",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.3.3"
+  }
+}
