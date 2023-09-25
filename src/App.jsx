@@ -20,25 +20,19 @@ export default function App() {
           <div className="flex flex-col py-16 md:flex-row lg:mx-16 m-4 bg-gray-100 rounded-lg p-4 items-center justify-center">
             <img className="w-96 h-full" src="img/wotori_worlds.jpg" />
             <div className="text-justify p-4">
-              Ekza is a visionary project spearheaded by the innovative minds at
-              the Wotori Studio. An integral part of the ekza.space virtual
-              world project, also referred to as the metaverse, Stellar's
-              primary objective is to facilitate the creation of assets that can
-              be employed in gaming and virtual environments.
+              Ekza is the experiment I started in 2018. I gained an
+              understanding of collaboration when the #draw_in_your_style
+              challenge emerged on the internet. I participated multiple times
+              and felt so exhilarated and joyful that I wanted to bring this
+              concept to artists worldwide. Additionally, I attended a game
+              design school and delved into game and asset creation. Combining
+              these two passions, the idea of Ekza was born in my mind.
               <br />
               <br />
-              The project enables users to collaborate and profit whenever their
-              content is utilized. The philosophy of the Stellar project centers
-              around redistributing control from large-scale studios back to the
-              hands of the individual users and artists. It's designed to
-              empower creators, allowing them to retain shares in the art
-              they've created instead of settling for one-time payments.
-              <br />
-              <br />
-              By contributing to the Stellar project, artists and users aren't
-              just creating content - they're actively shaping the landscape of
-              virtual worlds and games, and redefining what it means to be a
-              creator in the digital age.
+              It is a platform where people can build their own worlds, form
+              teams, and dive into the creative process on top of modern
+              blockchain technologies that changes the game and the entire
+              computer animation industry, so you are welcome!
             </div>
           </div>
           <p className="text-5xl flex justify-center pt-4">ecosystem</p>
