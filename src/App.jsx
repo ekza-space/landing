@@ -1,5 +1,5 @@
 import { SayHi } from "./components/hi";
-import { Project, Project2 } from "./components/project";
+import { Project } from "./components/project";
 import Video from "./components/video";
 
 export default function App() {
@@ -8,7 +8,6 @@ export default function App() {
 
   let spaceText =
     "Ekza Space is a pioneering project that seeks to connect Ekza Stellar's cooperative concepts between users with the tangible aspects of the internet, including both 3-dimensional and 2-dimensional spaces. The main objective of Ekza Space is to establish a platform that enables artists and users to engage with generated content, thus comprehending the advantages derived from the utilization of these technologies.";
-
   return (
     <>
       <SayHi />
@@ -20,7 +19,7 @@ export default function App() {
           </p>
           <div
             className="flex flex-col justify-center space-between
-                   lg:flex-row lg:justify-center pt-4 lg:mx-14"
+                       md:flex-row lg:justify-center pt-4 lg:mx-14"
           >
             <Project
               projectName={"Stellar"}
@@ -28,13 +27,24 @@ export default function App() {
               text={stellarText}
               link="https://stellar.ekza.io"
             />
-            <Project
-              projectName={"Space"}
-              imgPath="./img/space.jpg"
-              text={spaceText}
-              link="https://space.ekza.io"
-              isFlip={true}
-            />
+            <div className="md:hidden">
+              <Project
+                projectName={"Space"}
+                imgPath="./img/space.jpg"
+                text={spaceText}
+                link="https://space.ekza.io"
+                isFlip={false}
+              />
+            </div>
+            <div className="hidden lg:block md:block">
+              <Project
+                projectName={"Space"}
+                imgPath="./img/space.jpg"
+                text={spaceText}
+                link="https://space.ekza.io"
+                isFlip={true}
+              />
+            </div>
           </div>
         </div>
       </section>
