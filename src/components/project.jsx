@@ -15,7 +15,7 @@ export function Project({ projectName, imgPath, text, link, isFlip = false }) {
       <a href={link} target="_blank" className="cursor-pointer">
         {isFlip ? (
           <>
-            <img src={imgPath} className="w-full" />
+            <img src={imgPath} className="w-full rounded-lg" />
             <ProjectContent projectName={projectName} text={text} />
           </>
         ) : (
