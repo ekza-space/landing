@@ -68,11 +68,13 @@ export default function App() {
         </div>
       </section>
       <Video />
-      <a href="https://wotori.io" target="_blank">
-        <p className="flex justify-center py-4 cursor-pointer">
-          Created at Wotori Studio
-        </p>
-      </a>
+
+      <p className="flex justify-center py-4">
+        Created at
+        <a className="ml-1 link" href="https://wotori.io" target="_blank">
+          Wotori Studio
+        </a>
+      </p>
     </>
   );
 }
