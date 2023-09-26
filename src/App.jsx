@@ -42,14 +42,15 @@ export default function App() {
           >
             <Project
               projectName={"Stellar"}
-              imgPath="./img/stellar.jpeg"
+              imgPath="/img/stellar.jpeg"
+              imgPath2="/img/distr.jpeg"
               text={stellarText}
               link="https://stellar.ekza.io"
             />
             <div className="md:hidden">
               <Project
                 projectName={"Space"}
-                imgPath="./img/space.jpg"
+                imgPath="/img/space.jpeg"
                 text={spaceText}
                 link="https://space.ekza.io"
                 isFlip={false}
