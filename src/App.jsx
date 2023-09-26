@@ -42,7 +42,7 @@ export default function App() {
           >
             <Project
               projectName={"Stellar"}
-              imgPath="/img/stellar.jpeg"
+              imgPath="/img/stellar.jpg"
               imgPath2="/img/distr.jpeg"
               text={stellarText}
               link="https://stellar.ekza.io"
@@ -50,7 +50,8 @@ export default function App() {
             <div className="md:hidden">
               <Project
                 projectName={"Space"}
-                imgPath="/img/space.jpeg"
+                imgPath="/img/space.jpg"
+                imgPath2="/img/space-ashton.jpeg"
                 text={spaceText}
                 link="https://space.ekza.io"
                 isFlip={false}
@@ -60,6 +61,7 @@ export default function App() {
               <Project
                 projectName={"Space"}
                 imgPath="./img/space.jpg"
+                imgPath2="/img/space-ashton.jpeg"
                 text={spaceText}
                 link="https://space.ekza.io"
                 isFlip={true}
