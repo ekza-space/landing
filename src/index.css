@@ -14,3 +14,17 @@
 .link {
   @apply text-blue-800 hover:underline;
 }
+
+.buttonCustom {
+  background-color: #00e4af;
+  color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 100px;
+  border-width: 0px;
+  flex-shrink: 0;
+  transition: 0.3s;
+}
