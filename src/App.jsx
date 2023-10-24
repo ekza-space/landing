@@ -10,6 +10,10 @@ export default function App() {
     setShowCaptcha(!isBot);
   }, []);
 
+  if (showCaptcha === null) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       {showCaptcha ? <Captcha setShowCaptcha={setShowCaptcha} /> : <Frontend />}

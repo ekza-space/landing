@@ -1,11 +1,12 @@
 function ProjectContent({ projectName, text, link }) {
   return (
-    <div className="p-4">
-      <p className="pt-8 w-auto py-2 text-2xl lg:text-5xl font-audiowide">
-        <a href={link} target="_blank" className="link">
-          {projectName}
-        </a>
-      </p>
+    <div className="p-2">
+        <p className="pt-4 w-auto py-2 text-2xl lg:text-5xl font-audiowide text-center">
+          <a href={link} target="_blank" className="link">
+            {projectName}
+            <p className="text-xs font-sans">click to open the project</p>
+          </a>
+        </p>
       <p className="lg:text-base text-justify">{text}</p>
     </div>
   );
