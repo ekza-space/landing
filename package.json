@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "cp -r ./public ./dist && npx parcel ./src/index.html",
-    "clear": "rm -rf .parcel-cache dist",
-    "build": "rm -rf build && mkdir build && parcel build --dist-dir build src/index.html --no-source-maps && cp -r ./public/* ./build",
-    "deploy": "yarn build && scp -r ./build/* vds-amster:/var/www/ekza/html"
+    "clear": "rm -rf .parcel-cache dist/* build*",
+    "dev-e": "cp -r ./public/* ./dist && npx parcel ./src/index-e.html",
+    "dev-w": "cp -r ./public/* ./dist && npx parcel ./src/index-w.html",
+    "build-e": "rm -rf build-e && mkdir build-e && parcel build --dist-dir build-e src/index-e.html --no-source-maps && cp -r ./public/* ./build-e",
+    "build-w": "rm -rf build-w && mkdir build-w && parcel build --dist-dir build-w src/index-w.html --no-source-maps && cp -r ./public/* ./build-w",
+    "deploy-e": "yarn clear && yarn build-e && scp -r ./build-e/* vds-amster:/var/www/ekza/html",
+    "deploy-w": "yarn build-w && scp -r ./build-w/* vds-amster:/var/www/wotori/html",
+    "deploy-all": "yarn deploy-e && yarn deploy-w"
   },
   "dependencies": {
     "react": "^18.2.0",

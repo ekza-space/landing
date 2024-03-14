@@ -1,8 +1,10 @@
-import { SayHi } from "./hi";
-import { Project } from "./project";
-import Video from "./video";
+import Footer from "../components/footer";
+import { SayHi } from "../components/hi";
+import { Project } from "../components/project";
+import ProjectCards from "../components/projectCards";
+import Video from "../components/video";
 
-export default function Frontend() {
+export default function EkzaLandingPage() {
   let stellarText =
     "Ekza Stellar main goal is to foster collaboration among users in the creation and development of assets used in gaming and virtual environments. Stellar aims to empower individual creators by providing a platform for them to collaborate, share ideas, and collectively contribute to the digital content creation landscape. This project shifting control from big studios back to individual creators, establishing a new era where creators are at the forefront, driving visual innovation all over the world.";
 
@@ -12,13 +14,13 @@ export default function Frontend() {
     <>
       <SayHi />
 
-      <section>
-        <div className="flex flex-col">
+      <div className="flex justify-center">
+        <div className="flex flex-col items-center justify-center max-w-7xl">
           <p className="font-audiowide text-5xl flex justify-center pt-4">
             ekza
           </p>
           <div className="flex flex-col py-16 md:flex-row lg:mx-16 m-4 bg-gray-100 rounded-lg p-4 items-center justify-center">
-            <img className="w-96 h-full" src="img/wotori_worlds.jpg" />
+            <img className="w-96 h-full" src="/img/wotori_worlds.jpg" />
             <div className="text-justify p-4">
               Ekza is the experiment I started in 2018. I gained an
               understanding of collaboration when the #draw_in_your_style
@@ -36,48 +38,13 @@ export default function Frontend() {
             </div>
           </div>
           <p className="text-5xl flex justify-center pt-4">ecosystem</p>
-          <div
-            className="flex flex-col justify-center space-between
-                           md:flex-row lg:justify-center pt-4 lg:mx-8"
-          >
-            <Project
-              projectName={"Stellar"}
-              imgPath="/img/stellar.jpg"
-              imgPath2="/img/distr.jpeg"
-              text={stellarText}
-              link="https://stellar.ekza.io"
-            />
-            <div className="md:hidden">
-              <Project
-                projectName={"Space"}
-                imgPath="/img/space.jpg"
-                imgPath2="/img/space-ashton.jpeg"
-                text={spaceText}
-                link="https://space.ekza.io"
-                isFlip={false}
-              />
-            </div>
-            <div className="hidden lg:block md:block">
-              <Project
-                projectName={"Space"}
-                imgPath="./img/space.jpg"
-                imgPath2="/img/space-ashton.jpeg"
-                text={spaceText}
-                link="https://space.ekza.io"
-                isFlip={true}
-              />
-            </div>
-          </div>
+
+          <ProjectCards stellarText={stellarText} spaceText={spaceText} />
         </div>
-      </section>
+      </div>
       <Video />
 
-      <p className="flex justify-center py-4">
-        Created at
-        <a className="ml-1 link" href="https://wotori.io" target="_blank">
-          Wotori Studio
-        </a>
-      </p>
+      <Footer />
     </>
   );
 }
