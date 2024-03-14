@@ -6,24 +6,24 @@ export default function Channels() {
           <p className="text-3xl mb-8">channels:</p>
 
           <div className="WotoriStudio mb-12 ">
-            <p>Wotori Studio</p>
+            <p className="text-2xl">Wotori Studio</p>
             <div className="">
               <a target="_blank" href="https://www.instagram.com/wotoristudio/">
-                <h2 className="text-3xl">Instagram</h2>
+                <h2 className="">Instagram</h2>
               </a>
             </div>
             <div className="">
               <a target="_blank" href="https://twitter.com/wotorimovako">
-                <h2 className="text-3xl">Twitter</h2>
+                <h2 className="">Twitter</h2>
               </a>
             </div>
           </div>
 
           <div className="EkzaSpace">
-            <p>Ekza Space</p>
+            <p className="text-2xl">Ekza Space</p>
             <div className="">
               <a target="_blank" href="https://www.instagram.com/ekza.space/">
-                <h2 className="text-3xl">Instagram</h2>
+                <h2 className="">Instagram</h2>
               </a>
             </div>
             <div className="">
@@ -31,19 +31,19 @@ export default function Channels() {
                 target="_blank"
                 href="https://stellar.ekza.io/ppt/wotori-pitchdeck.pdf"
               >
-                <h2 className="text-3xl">Twitter</h2>
+                <h2 className="">Twitter</h2>
               </a>
             </div>
 
             <div className="">
               <a target="_blank" href="https://t.me/ekzaspace">
-                <h2 className="text-3xl">Telegram</h2>
+                <h2 className="">Telegram</h2>
               </a>
             </div>
 
             <div className="">
               <a target="_blank" href="https://discord.gg/yUWb4Q5b">
-                <h2 className="text-3xl">Discord</h2>
+                <h2 className="">Discord</h2>
               </a>
             </div>
           </div>
@@ -54,7 +54,7 @@ export default function Channels() {
           {/* <p className="text-3xl mb-2">etherium: ERC20</p>
         <p className="text-3xl mb-8">archway: CW20</p> */}
           <p>Tokens are not yet minted.</p>
-          <p>Etherium erc20 and archway cw20 should be here soon.</p>
+          <p>Etherium erc20 and archway cw20 would be here soon.</p>
         </div>
       </div>
     </div>
