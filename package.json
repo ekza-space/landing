@@ -9,7 +9,7 @@
     "build-e": "rm -rf build-e && mkdir build-e && parcel build --dist-dir build-e src/index-e.html --no-source-maps && cp -r ./public/* ./build-e",
     "build-w": "rm -rf build-w && mkdir build-w && parcel build --dist-dir build-w src/index-w.html --no-source-maps && cp -r ./public/* ./build-w",
     "deploy-e": "yarn clear && yarn build-e && scp -r ./build-e/* vds-amster:/var/www/ekza/html",
-    "deploy-w": "yarn build-w && scp -r ./build-w/* vds-amster:/var/www/wotori/html",
+    "deploy-w": "yarn clear && yarn build-w && scp -r ./build-w/* vds-amster:/var/www/wotori/html",
     "deploy-all": "yarn deploy-e && yarn deploy-w"
   },
   "dependencies": {

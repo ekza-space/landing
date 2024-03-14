@@ -13,13 +13,14 @@ export default function Resources() {
             Here we outline our inspiration, philosophy, and goals. This content
             is regularly updated to reflect our evolving vision and aspirations.
           </p>
-          <a
+          {/* <a
             className="link"
             target="_blank"
             href="https://stellar.ekza.io/ppt/wotori-white-paper.pdf"
           >
             read more
-          </a>
+          </a> */}
+          more information will be available shortly.
         </div>
 
         <div className="max-w-3xl mb-24">
