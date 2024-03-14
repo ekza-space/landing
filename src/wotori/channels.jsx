@@ -11,18 +11,18 @@ export default function Channels() {
               <a
                 className="link"
                 target="_blank"
-                href="https://www.instagram.com/wotoristudio/"
+                href="https://twitter.com/wotorimovako"
               >
-                <h2 className="">Instagram</h2>
+                <h2 className="">Twitter</h2>
               </a>
             </div>
             <div className="">
               <a
                 className="link"
                 target="_blank"
-                href="https://twitter.com/wotorimovako"
+                href="https://www.instagram.com/wotoristudio/"
               >
-                <h2 className="">Twitter</h2>
+                <h2 className="">Instagram</h2>
               </a>
             </div>
             <a className="mt-2 link" href="mailto:wotorimovako@gmail.com">
@@ -45,7 +45,7 @@ export default function Channels() {
               <a
                 className="link"
                 target="_blank"
-                href="https://stellar.ekza.io/ppt/wotori-pitchdeck.pdf"
+                href="https://twitter.com/EkzaSpace69700"
               >
                 <h2 className="">Twitter</h2>
               </a>
@@ -74,7 +74,7 @@ export default function Channels() {
           {/* <p className="text-3xl mb-2">etherium: ERC20</p>
         <p className="text-3xl mb-8">archway: CW20</p> */}
           <p>Tokens are not yet minted.</p>
-          <p>Ethereum ERC20 and archway CW20 would be here soon.</p>
+          <p>Ethereum ERC20 and Archway CW20 would be here soon.</p>
         </div>
       </div>
     </div>
