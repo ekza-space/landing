@@ -1,10 +1,11 @@
 export default function Resources() {
   return (
     <div
-      className="lg:h-screen md:h-screen
+      className="lg:h-screen 
                     overflow-auto overflow-visible
                     flex flex-col items-center justify-center
-                    bg-gray-100"
+                    bg-gray-100
+                    sm:mb-24"
     >
       <div className="max-sm:m-8 sm:m-8">
         <div className="max-w-3xl mb-24 overflow-visible">

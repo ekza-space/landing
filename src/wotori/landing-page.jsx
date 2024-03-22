@@ -4,6 +4,7 @@ import { SayHi } from "../components/hi";
 import Channels from "./channels";
 import Intro from "./intro";
 import Resources from "./resources";
+import StarsAnimation from "../components/starts";
 
 export default function WotoriLandingPage() {
   useEffect(() => {
@@ -13,9 +14,12 @@ export default function WotoriLandingPage() {
   return (
     <div className="">
       <SayHi />
+      <StarsAnimation />
+
       <Intro />
       <Resources />
       <Channels />
+
       <Footer />
     </div>
   );
