@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import { isMobile } from "react-device-detect";
 
 const StarsAnimation = () => {
   const canvasRef = useRef(null);
@@ -48,8 +49,13 @@ const StarsAnimation = () => {
       }
     }
 
+    let count = 1500;
+    if (isMobile) {
+      count = 500;
+    }
+
     speed = 0.02;
-    stars = Array.from({ length: 1500 }, () => new Star());
+    stars = Array.from({ length: count }, () => new Star());
 
     c.fillStyle = "rgba(255, 255, 255, 0.1)";
     c.strokeStyle = "rgb(22, 174, 240, 0.3)";
@@ -84,7 +90,7 @@ const StarsAnimation = () => {
         zIndex: -1,
         width: "100vw",
         height: "100vh",
-              }}
+      }}
     />
   );
 };
