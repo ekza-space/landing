@@ -52,7 +52,7 @@ const StarsAnimation = () => {
     stars = Array.from({ length: 1500 }, () => new Star());
 
     c.fillStyle = "rgba(255, 255, 255, 0.1)";
-    c.strokeStyle = "rgb(5, 202, 182, 0.5)";
+    c.strokeStyle = "rgb(22, 174, 240, 0.3)";
     c.translate(canvas.width / 2, canvas.height / 2);
 
     const draw = () => {
@@ -74,7 +74,19 @@ const StarsAnimation = () => {
     return () => cancelAnimationFrame(draw);
   }, []);
 
-  return <canvas ref={canvasRef} style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }}  />;
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        zIndex: -1,
+        width: "100vw",
+        height: "100vh",
+      }}
+    />
+  );
 };
 
 export default StarsAnimation;

@@ -5,7 +5,7 @@ export default function Intro() {
     <div className="h-screen flex items-center justify-center">
       <StarsAnimation />
       <div className="max-w-3xl max-sm:m-8 sm:m-8">
-        <img className="w-64" src="/img/cat.png" alt="Cat" />
+        <img className="w-64" src="/img/cat-no-bg.png" alt="Cat" />
         <h1 className="text-4xl font-bold mb-2">Wotori Studio</h1>
         <h2 className="text-3xl mb-2">Decentralized Animation Studio</h2>
         <p className="text-2xl">
