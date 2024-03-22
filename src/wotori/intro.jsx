@@ -1,6 +1,9 @@
+import StarsAnimation from "../components/starts";
+
 export default function Intro() {
   return (
     <div className="h-screen flex items-center justify-center">
+      <StarsAnimation />
       <div className="max-w-3xl max-sm:m-8 sm:m-8">
         <img className="w-64" src="/img/cat.png" alt="Cat" />
         <h1 className="text-4xl font-bold mb-2">Wotori Studio</h1>

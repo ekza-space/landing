@@ -16,6 +16,7 @@ export default function Channels() {
                 <h2 className="">Twitter</h2>
               </a>
             </div>
+
             <div className="">
               <a
                 className="link"
@@ -25,6 +26,27 @@ export default function Channels() {
                 <h2 className="">Instagram</h2>
               </a>
             </div>
+
+            <div className="">
+              <a
+                className="link"
+                target="_blank"
+                href="https://discord.gg/De83tH6H"
+              >
+                <h2 className="">Discord</h2>
+              </a>
+            </div>
+
+            <div className="">
+              <a
+                className="link"
+                target="_blank"
+                href="https://t.me/wotoristudio"
+              >
+                <h2 className="">Telegram</h2>
+              </a>
+            </div>
+
             <a className="mt-2 link" href="mailto:wotorimovako@gmail.com">
               Email
             </a>
@@ -36,24 +58,18 @@ export default function Channels() {
               <a
                 className="link"
                 target="_blank"
-                href="https://www.instagram.com/ekza.space/"
+                href="https://twitter.com/EkzaSpace"
               >
-                <h2 className="">Instagram</h2>
+                <h2 className="">Twitter</h2>
               </a>
             </div>
             <div className="">
               <a
                 className="link"
                 target="_blank"
-                href="https://twitter.com/EkzaSpace69700"
+                href="https://www.instagram.com/ekza.space/"
               >
-                <h2 className="">Twitter</h2>
-              </a>
-            </div>
-
-            <div className="">
-              <a className="link" target="_blank" href="https://t.me/ekzaspace">
-                <h2 className="">Telegram</h2>
+                <h2 className="">Instagram</h2>
               </a>
             </div>
 
@@ -64,6 +80,12 @@ export default function Channels() {
                 href="https://discord.gg/yUWb4Q5b"
               >
                 <h2 className="">Discord</h2>
+              </a>
+            </div>
+
+            <div className="">
+              <a className="link" target="_blank" href="https://t.me/ekzaspace">
+                <h2 className="">Telegram</h2>
               </a>
             </div>
           </div>
