@@ -1,50 +1,81 @@
+import React from "react";
 import Footer from "../components/footer";
 import { SayHi } from "../components/hi";
-import { Project } from "../components/project";
 import ProjectCards from "../components/projectCards";
 import Video from "../components/video";
 
 export default function EkzaLandingPage() {
-  let stellarText =
-    "Ekza Stellar main goal is to foster collaboration among users in the creation and development of assets used in gaming and virtual environments. Stellar aims to empower individual creators by providing a platform for them to collaborate, share ideas, and collectively contribute to the digital content creation landscape. This project shifting control from big studios back to individual creators, establishing a new era where creators are at the forefront, driving visual innovation all over the world.";
+  const stellarText =
+    "Ekza Stellar’s main goal is to foster collaboration among users in the creation and development of assets used in gaming and virtual environments. Stellar empowers creators by providing a platform to share ideas and contribute collectively, shifting control from big studios back to individuals and driving global visual innovation.";
+  const spaceText =
+    "Ekza Space is a pioneering project connecting Stellar’s cooperative concepts with tangible internet spaces, both 3D and 2D. Its objective is to let artists and users engage with generated content and reap the benefits of these cutting‑edge technologies.";
 
-  let spaceText =
-    "Ekza Space is a pioneering project that seeks to connect Ekza Stellar's cooperative concepts between users with the tangible aspects of the internet, including both 3-dimensional and 2-dimensional spaces. The main objective of Ekza Space is to establish a platform that enables artists and users to engage with generated content, thus comprehending the advantages derived from the utilization of these technologies.";
   return (
-    <>
+    <main className="font-sans text-gray-900">
       <SayHi />
-
-      <div className="flex justify-center">
-        <div className="flex flex-col items-center justify-center max-w-7xl">
-          <p className="font-audiowide text-5xl flex justify-center pt-4">
+      <header className="bg-white shadow-sm">
+        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+          <a href="#" className="text-4xl font-extrabold text-black">
             ekza
-          </p>
-          <div className="flex flex-col py-16 md:flex-row lg:mx-16 m-4 bg-gray-100 rounded-lg p-4 items-center justify-center">
-            <img className="w-96 h-full" src="/img/wotori_worlds.jpg" />
-            <div className="text-justify p-4">
-              Ekza is the experiment I started in 2018. I gained an
-              understanding of collaboration when the #draw_in_your_style
-              challenge emerged on the internet. I participated multiple times
-              and felt so exhilarated and joyful that I wanted to bring this
-              concept to artists worldwide. Additionally, I attended a game
-              design school and delved into game and asset creation. Combining
-              these two passions, the idea of Ekza was born in my mind.
-              <br />
-              <br />
-              It is a platform where people can build their own worlds, form
-              teams, and dive into the creative process on top of modern
-              blockchain technologies that changes the game and the entire
-              computer animation industry, so you are welcome!
-            </div>
-          </div>
-          <p className="text-5xl flex justify-center pt-4">ecosystem</p>
-
-          <ProjectCards stellarText={stellarText} spaceText={spaceText} />
+          </a>
+          <nav className="space-x-6 text-gray-600">
+            <a href="#about" className="hover:text-purple-600 transition">About</a>
+            <a href="#ecosystem" className="hover:text-purple-600 transition">Ecosystem</a>
+            <a href="#contact" className="hover:text-purple-600 transition">Contact</a>
+          </nav>
         </div>
-      </div>
-      <Video />
+      </header>
 
+      <section id="about" className="container mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 className="text-6xl font-extrabold text-transparent text-black">
+            Welcome to Ekza
+          </h1>
+          <p className="mt-6 text-xl leading-relaxed text-gray-700">
+            Ekza is the experiment I started in 2018. I discovered the power of collaboration through the #draw_in_your_style challenges online. After studying game design and asset creation, I combined these passions to build a platform where teams can create and innovate together on blockchain‑powered worlds.
+          </p>
+          <a
+            href="https://stellar.ekza.io/ppt/wotori-pitchdeck.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-block px-8 py-3 bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-semibold rounded-lg hover:opacity-90 transition"
+          >
+            Pitch Deck
+          </a>
+        </div>
+        <div>
+          <img
+            className="rounded-lg shadow-lg object-cover w-full"
+            src="/img/wotori_worlds.jpg"
+            alt="Ekza Worlds"
+          />
+        </div>
+      </section>
+
+      <section id="ecosystem" className="bg-gray-50 py-20">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-5xl font-bold mb-8 text-gray-800">Ecosystem</h2>
+          <div className="flex flex-col md:flex-row justify-center items-stretch gap-8">
+            <ProjectCards stellarText={stellarText} spaceText={spaceText} />
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="container mx-auto px-6 py-20 text-center">
+        <h2 className="text-5xl font-bold mb-4 text-gray-800">Contact</h2>
+        <p className="text-xl text-gray-700">
+          For collaboration ideas, email me at{' '}
+          <a href="mailto:wotorimovako@gmail.com" className="text-purple-600 underline">
+            wotorimovako@gmail.com
+          </a>{' '}
+          or message me on Telegram at{' '}
+          <a href="https://t.me/wotorii" className="text-purple-600 underline" target="_blank" rel="noopener noreferrer">
+            @wotorii
+          </a>.
+        </p>
+      </section>
+      <div className="h-24" />
       <Footer />
-    </>
+    </main>
   );
 }

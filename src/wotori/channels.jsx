@@ -91,13 +91,6 @@ export default function Channels() {
           </div>
         </div>
 
-        <div className="Token">
-          <p className="text-3xl mb-8">tokens:</p>
-          {/* <p className="text-3xl mb-2">etherium: ERC20</p>
-        <p className="text-3xl mb-8">archway: CW20</p> */}
-          <p>Tokens are not yet minted.</p>
-          <p>Ethereum ERC20 and Archway CW20 would be here soon.</p>
-        </div>
       </div>
     </div>
   );
