@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
-export function SayHi() {
+export const SayHi: React.FC = () => {
   useEffect(() => {
     const isProduction = process.env.NODE_ENV === "production";
     if (isProduction) {
@@ -8,4 +8,4 @@ export function SayHi() {
     }
   }, []);
   return null;
-}
+};

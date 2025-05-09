@@ -1,4 +1,19 @@
-function ProjectContent({ projectName, text, link }) {
+interface ProjectContentProps {
+  projectName: string;
+  text: string;
+  link: string;
+}
+
+interface ProjectProps {
+  projectName: string;
+  imgPath: string;
+  imgPath2?: string | null;
+  text: string;
+  link: string;
+  isFlip?: boolean;
+}
+
+function ProjectContent({ projectName, text, link }: ProjectContentProps) {
   return (
     <div className="p-2">
         <p className="pt-4 w-auto py-2 text-2xl lg:text-5xl font-audiowide text-center">
@@ -19,7 +34,7 @@ export function Project({
   text,
   link,
   isFlip = false,
-}) {
+}: ProjectProps) {
   return (
     <div className="bg-gray-100 lg:mx-8 sm:m-4 m-4 rounded-lg md:p-0">
       {isFlip ? (

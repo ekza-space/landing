@@ -1,6 +1,12 @@
+import React from "react";
 import { Project } from "./project";
 
-export default function ProjectCards({ stellarText, spaceText }) {
+interface ProjectCardsProps {
+  stellarText: string;
+  spaceText: string;
+}
+
+const ProjectCards: React.FC<ProjectCardsProps> = ({ stellarText, spaceText }) => {
   return (
     <div
       className={`flex flex-col justify-center 
@@ -37,3 +43,5 @@ export default function ProjectCards({ stellarText, spaceText }) {
     </div>
   );
 }
+
+export default ProjectCards;

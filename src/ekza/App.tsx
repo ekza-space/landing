@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Captcha from "../components/captcha";
 import EkzaLandingPage from "./landing-page";
+import Captcha from "../components/captcha";
 
 export default function App() {
   const [showCaptcha, setShowCaptcha] = useState(false);
