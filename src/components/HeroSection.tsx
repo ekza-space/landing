@@ -1,89 +1,92 @@
 import React from 'react';
-
 interface HeroSectionProps {
     imageUrl: string;
     imageAlt?: string;
-    title: string;
+    title?: string;
+    subtitle?: string;
     description?: string;
-    ctaText: string;
+    footerLeft?: string;
+    footerCenter?: string;
+    ctaText?: string;
     ctaLink: string;
     heroHeight?: string;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
     imageUrl,
-    imageAlt = "Hero background",
-    title,
-    description,
-    ctaText,
+    imageAlt = "A person standing in a field of glowing flowers, looking at a celestial swirl in the sky.",
+    title = "Ekza Space",
+    subtitle = "Where creativity runs free",
+    description = "Discovery doesn't always begin with knowing - it starts with questions. Context that guide understanding forward.\n\nLumen Atlas is your companion for deeper insight. A calm interface for asking better questions and drawing thoughtful. Less noise. More meaning.",
+    footerLeft = "",
+    footerCenter = "Ekza Space ©2025",
+    ctaText = "Start Exploring",
     ctaLink,
-    heroHeight = "h-[85vh]",
+    heroHeight = "h-screen",
 }) => {
     return (
         <section
             id="hero"
-            className={`relative w-full ${heroHeight} overflow-hidden`}
+            className={`relative w-full ${heroHeight} text-white overflow-hidden`}
         >
             {/* Background Image */}
             <img
-                className="absolute inset-0 w-full h-full object-cover blur-sm"
+                className="absolute inset-0 w-full h-full object-cover"
                 src={imageUrl}
                 alt={imageAlt}
-                loading="lazy"
+                loading="eager"
                 decoding="async"
             />
 
-            {/* Light Overlay */}
+            {/* Gradient Overlay for better text contrast */}
             <div
-                className="absolute inset-0 bg-white/80"
+                className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"
                 aria-hidden="true"
             />
 
             {/* Content Container */}
-            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 lg:px-8">
-                {/* Main Text / Title */}
-                <p className="
-                    text-black
-                    text-3xl sm:text-4xl md:text-5xl
-                    font-extrabold
-                    leading-tight sm:leading-tight md:leading-tight
-                    drop-shadow-xl
-                    max-w-4xl
-                    ">
-                    {title}
-                </p>
+            <div className="relative z-10 flex flex-col h-full p-6 sm:p-8 lg:p-10">
+                {/* 1. Header with Navigation */}
 
-                {/* NEW: Description / Body Text - Rendered if 'description' prop is provided */}
-                {description && (
-                    <p className="
-                        mt-4 md:mt-6  {/* Space above this paragraph */}
-                        text-black
-                        text-lg sm:text-xl    {/* Slightly smaller than title */}
-                        font-medium           {/* Less bold than title, but still prominent */}
-                        leading-relaxed       {/* Good for readability of longer text */}
-                        drop-shadow-lg        {/* Consistent shadow, could be 'md' or removed if too much */}
-                        max-w-3xl             {/* Max width for readability, can adjust */}
-                        text-justify
-                    ">
-                        {description}
-                    </p>
-                )}
 
-                {/* Call to Action Button */}
-                <a
-                    href={ctaLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="
-                        mt-8 inline-block px-8 py-3
-                        bg-black text-white
-                        font-semibold rounded-lg shadow-md
-                        hover:bg-gray-800
-                        transition-colors duration-200 ease-in-out
-                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black/70 focus:ring-white"
-                >
-                    {ctaText}
-                </a>
+                {/* 2. Main Content (grows to fill space) */}
+                <main className="flex-grow grid md:grid-cols-12 items-end gap-12 md:gap-16 pb-12">
+                    {/* Left Side: Title and Subtitle */}
+                    <div className="md:col-span-5 flex flex-col">
+                        <h1 className="text-6xl lg:text-7xl font-light">{title}</h1>
+                        {subtitle && (
+                            <p className="mt-4 text-2xl lg:text-3xl font-light text-gray-200">
+                                {subtitle}
+                            </p>
+                        )}
+                    </div>
+
+                    {/* Right Side: CTA and Description */}
+                    <div className="md:col-span-4 md:col-start-8 flex flex-col items-start">
+                        <a
+                            href={ctaLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="border border-white/80 rounded-full px-8 py-3 text-base font-medium hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black/30 focus:ring-white"
+                        >
+                            {ctaText}
+                        </a>
+                        {description && (
+                            <p className="mt-8 text-base text-gray-300 leading-relaxed whitespace-pre-line max-w-xl">
+                                {description}
+                            </p>
+                        )}
+                    </div>
+                </main>
+
+                {/* 3. Footer */}
+                <footer className="w-full flex-shrink-0">
+                    <hr className="border-t border-white/20 mb-4" />
+                    <div className="flex justify-between items-center text-sm text-gray-400">
+                        <span>{footerLeft}</span>
+                        <span>{footerCenter}</span>
+                    </div>
+                </footer>
             </div>
         </section>
     );
