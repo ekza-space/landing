@@ -30,10 +30,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     heroHeight = "h-screen",
 }) => {
     const getButtonClasses = (variant: Button['variant'] = 'primary') => {
-        const baseClasses = "rounded-full px-8 py-3 text-base font-medium transition-colors duration-200 focus:outline-none border border-white/80";
-        return variant === 'primary'
-            ? `${baseClasses} hover:bg-white/10`
-            : `${baseClasses} bg-white/10 hover:bg-white/20`;
+        const baseClasses =
+            "rounded-full px-8 py-3 text-base font-medium focus:outline-none border transition-all duration-200 transform hover:-translate-y-0.5";
+
+        return variant === "primary"
+            ? `${baseClasses} bg-white text-black border-white hover:bg-gray-100 hover:shadow-lg`
+            : `${baseClasses} bg-white/10 text-white border-white/60 hover:bg-white/20 hover:shadow-md`;
     };
 
     return (
@@ -59,7 +61,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             {/* Content Container */}
             <div className="relative z-10 flex flex-col h-full p-6 sm:p-8 lg:p-10">
                 {/* Main Content (grows to fill space) */}
-                <main className="flex-grow grid md:grid-cols-12 items-end gap-12 md:gap-16 pb-12">
+                <main className="flex-grow grid md:grid-cols-12 items-end gap-10 md:gap-16 pb-12">
                     {/* Left Side: Title and Subtitle */}
                     <div className="md:col-span-5 flex flex-col">
                         <h1 className="text-6xl lg:text-7xl font-light">{title}</h1>
@@ -71,8 +73,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     </div>
 
                     {/* Right Side: Buttons and Description */}
-                    <div className="md:col-span-4 md:col-start-8 flex flex-col items-start">
-                        <div className="flex flex-col sm:flex-row gap-4">
+                    <div className="md:col-span-6 md:col-start-7 flex items-stretch">
+                        <div className="bg-black/45 backdrop-blur-lg rounded-3xl p-6 sm:p-8 w-full max-w-xl ml-auto border border-white/10 shadow-[0_18px_45px_rgba(0,0,0,0.45)]">
+                            <div className="flex flex-col sm:flex-row gap-4">
                             {buttons.map((button, index) => (
                                 <a
                                     key={index}
@@ -84,12 +87,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                                     {button.text}
                                 </a>
                             ))}
+                            </div>
+                            {description && (
+                                <p className="mt-8 text-base text-gray-200 leading-relaxed whitespace-pre-line">
+                                    {description}
+                                </p>
+                            )}
                         </div>
-                        {description && (
-                            <p className="mt-8 text-base text-gray-300 leading-relaxed whitespace-pre-line max-w-xl">
-                                {description}
-                            </p>
-                        )}
                     </div>
                 </main>
 
