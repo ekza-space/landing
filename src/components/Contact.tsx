@@ -71,6 +71,29 @@ export const Contact: React.FC<ContactProps> = ({ className = '' }) => {
               </a>
             </div>
           </div>
+
+          {/* X (Twitter) Contact Method */}
+          <div className="flex flex-col items-center text-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-7 w-7 text-blue-600"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M18.9 3H15.7L12 8.1 8.7 3H3.6L9.7 11.6 3.3 21H6.5L10.6 15.4 14.3 21h5.1L13.7 12.1 18.9 3Z" />
+            </svg>
+            <div>
+              <span className="block text-sm font-medium text-gray-500">Follow on X</span>
+              <a
+                href="https://x.com/EkzaSpace"
+                className="text-xl text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-150"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @EkzaSpace
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
