@@ -1,1 +1,1 @@
-moved here https://github.com/wotori-studio/landing-v2
+Repository refactored and moved to https://github.com/wotori-studio/landing-v2
