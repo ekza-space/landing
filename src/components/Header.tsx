@@ -1,24 +1,6 @@
 import React from 'react';
-
-const LogoIcon = ({ className }: { className?: string }) => (
-    <svg
-        className={className}
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-    >
-        <path d="M12 2L12 22" />
-        <path d="M22 12L2 12" />
-        <path d="M19.0711 4.92896L4.92896 19.0711" />
-        <path d="M19.071 19.0711L4.92887 4.92891" />
-    </svg>
-);
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useI18n } from "../i18n/i18n";
 
 const GitHubIcon = ({ className }: { className?: string }) => (
     <svg
@@ -36,19 +18,23 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
+    const { t } = useI18n();
+
     return (
         <>
             <header className={`fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm ${className}`}>
                 <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-                    <a href="#" className="text-4xl font-extrabold text-black">
-                        ekza
+                    <a href="#hero" className="text-2xl sm:text-3xl font-extrabold text-black">
+                        {t("header.brand")}
                     </a>
-                    <div className="flex items-center space-x-6">
-                        <nav className="space-x-6 text-gray-600">
-                            <a href="#hero" className="hover:text-purple-600 transition">Hero</a>
-                            <a href="#ecosystem" className="hover:text-purple-600 transition">Ecosystem</a>
-                            <a href="#contact" className="hover:text-purple-600 transition">Contact</a>
+                    <div className="flex items-center space-x-3 sm:space-x-4">
+                        <nav className="hidden md:flex space-x-6 text-gray-600">
+                            <a href="#hero" className="hover:text-purple-600 transition">{t("header.nav.hero")}</a>
+                            <a href="#how-it-works" className="hover:text-purple-600 transition">{t("header.nav.howItWorks")}</a>
+                            <a href="#ecosystem-modules" className="hover:text-purple-600 transition">{t("header.nav.ecosystem")}</a>
+                            <a href="#philosophy" className="hover:text-purple-600 transition">{t("header.nav.philosophy")}</a>
                         </nav>
+                        <LanguageSwitcher className="border-gray-300 bg-white/80 text-gray-800 hover:bg-gray-100" />
                         <a
                             href="https://github.com/ekza-space"
                             target="_blank"
@@ -61,18 +47,6 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                 </div>
             </header>
             <div className="h-20"></div>
-
-            {/* <header className="fixed top-0 left-0 right-0 z-50 w-full flex justify-center py-4">
-                <nav className="flex items-center space-x-2 bg-slate-900/40 backdrop-blur-md border border-white/20 rounded-full p-1 text-sm font-medium">
-                    <a href="#" className="flex items-center space-x-2.5 px-4 py-1.5 bg-white/10 rounded-full">
-                        <LogoIcon className="w-4 h-4" />
-                        <span>ekza</span>
-                    </a>
-                    <a href="#hero" className="px-4 py-1.5 text-gray-300 hover:text-white transition-colors">About</a>
-                    <a href="#ecosystem" className="px-4 py-1.5 text-gray-300 hover:text-white transition-colors">Ecosystem</a>
-                    <a href="#contact" className="px-4 py-1.5 text-gray-300 hover:text-white transition-colors">Contact</a>
-                </nav>
-            </header> */}
         </>
     );
 };

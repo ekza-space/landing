@@ -1,21 +1,48 @@
-import { HeroSection } from "../components/HeroSection"
+import { useEffect } from "react";
+import { HeroSection } from "../components/HeroSection";
 import ProjectCards from "../components/projectCards";
 import Footer from "../components/footer";
 import { SayHi } from "../components/hi";
 import Header from "../components/Header";
-import Contact from "../components/Contact";
+import { useI18n } from "../i18n/i18n";
 
 export default function EkzaLandingPage() {
+  const { language, t } = useI18n();
+
+  useEffect(() => {
+    document.title = t("meta.ekzaTitle");
+  }, [language, t]);
+
   const stellarText =
-    "Ekza Stellar fosters collaboration among users to collectively create and innovate digital assets for gaming and virtual worlds. Currently built on a Cosmos-based blockchain, Stellar is in the process of migrating to Solana to leverage its robust ecosystem, aligning closely with Ekza's existing Solana-compatible projects.";
+    t("ekza.ecosystem.projects.stellar");
 
   const spaceText =
-    "Ekza Space bridges Stellar's collaborative principles into practical internet spaces, offering immersive 3D environments where creators and users can actively engage with digital content. The platform amplifies user creativity, monetization, and interaction through advanced blockchain technologies. Already integrated with the Avatar service, it allows users to fully customize their appearance and represent themselves across supported environments.";
+    t("ekza.ecosystem.projects.space");
 
   const avatarText =
-    "At the intersection of digital identity and creative expression, Ekza Space empowers users to generate and monetize customizable 3D avatars as NFTs. Already integrated with the Solana blockchain, its intuitive UI enables creators to deploy avatar minters, ensuring true ownership, portability, and seamless use across various metaverses and decentralized applications.";
+    t("ekza.ecosystem.projects.avatar");
 
-  const myHeroDescription = "Ekza Space is a blockchain-powered platform that transforms 3D asset creation through global collaboration and automated revenue sharing, enabling game developers to integrate community-generated assets via the Ekza SDK while contributors earn fair, transparent compensation through smart contracts, with NFTs for ownership, generative AI for creation, and decentralization to ensure creators retain control—reducing costs, boosting efficiency, and empowering artists with recurring income.";
+  const myHeroDescription =
+    t("ekza.hero.description");
+
+  const platformLayers = [
+    {
+      title: t("ekza.howItWorks.layers.coCreate.title"),
+      description: t("ekza.howItWorks.layers.coCreate.description"),
+    },
+    {
+      title: t("ekza.howItWorks.layers.marketplace.title"),
+      description: t("ekza.howItWorks.layers.marketplace.description"),
+    },
+    {
+      title: t("ekza.howItWorks.layers.integrate.title"),
+      description: t("ekza.howItWorks.layers.integrate.description"),
+    },
+    {
+      title: t("ekza.howItWorks.layers.monetize.title"),
+      description: t("ekza.howItWorks.layers.monetize.description"),
+    },
+  ];
 
   const projects = [
     {
@@ -40,22 +67,33 @@ export default function EkzaLandingPage() {
       imgPath2: "",
       text: spaceText,
       link: "https://space.ekza.io",
-      isFlip: true,
-      showOnDesktop: true
+      isFlip: true
     }
   ];
 
   const heroButtons = [
     {
-      text: "Pitch Deck",
-      link: "https://stellar.ekza.io/ppt/wotori-pitchdeck.pdf",
+      text: t("ekza.hero.buttons.joinWaitlist"),
+      link: "mailto:wotorimovako@gmail.com?subject=Ekza%20Waitlist",
       variant: "primary" as const
     },
     {
-      text: "Light Paper",
-      link: "https://wotori.io/ppt/lp-wotori-studio_v0.5.pdf",
+      text: t("ekza.hero.buttons.openApp"),
+      link: "https://space.ekza.io",
+      variant: "secondary" as const
+    },
+    {
+      text: t("ekza.hero.buttons.readDocs"),
+      link: "https://github.com/ekza-space",
       variant: "secondary" as const
     }
+  ];
+
+  const footerLinks = [
+    { label: t("ekza.footer.documentation"), href: "https://github.com/ekza-space" },
+    { label: t("ekza.footer.twitter"), href: "https://twitter.com/EkzaSpace" },
+    { label: t("ekza.footer.discord"), href: "https://discord.gg/yUWb4Q5b" },
+    { label: t("ekza.footer.telegram"), href: "https://t.me/ekzaspace" },
   ];
 
   return (
@@ -66,27 +104,75 @@ export default function EkzaLandingPage() {
       <HeroSection
         imageUrl="/img/ekza_wotori_space.jpeg"
         imageAlt="Stylized image of the moon"
-        title="Decentralized Asset Creation for Games and Virtual Worlds"
+        title={t("ekza.hero.title")}
+        subtitle={t("ekza.hero.subtitle")}
         description={myHeroDescription}
         buttons={heroButtons}
         heroHeight="h-screen"
+        footerCenter={t("ekza.hero.footerCenter")}
       />
 
-      <section id="ecosystem" className="bg-gray-50 py-20">
+      <section id="how-it-works" className="bg-white py-20">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-5xl font-bold mb-8 text-gray-800">Ecosystem</h2>
+          <h2 className="text-5xl font-bold mb-6 text-gray-900">
+            {t("ekza.howItWorks.heading")}
+          </h2>
+          <p className="max-w-3xl mx-auto text-lg text-gray-600 mb-12">
+            {t("ekza.howItWorks.description")}
+          </p>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 text-left">
+            {platformLayers.map((layer) => (
+              <article
+                key={layer.title}
+                className="rounded-2xl border border-gray-200 bg-gray-50 p-6 shadow-sm"
+              >
+                <h3 className="text-2xl font-semibold mb-3">{layer.title}</h3>
+                <p className="text-gray-700 leading-relaxed">{layer.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="ecosystem-modules" className="bg-gray-50 py-20">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-5xl font-bold mb-6 text-gray-800">
+            {t("ekza.ecosystem.heading")}
+          </h2>
+          <p className="max-w-3xl mx-auto text-lg text-gray-600 mb-4">
+            {t("ekza.ecosystem.description")}
+          </p>
+          <p className="max-w-3xl mx-auto mb-8">
+            <span className="inline-flex rounded-full border border-amber-300 bg-amber-100 px-4 py-1.5 text-sm font-medium text-amber-900">
+              {t("ekza.ecosystem.statusNote")}
+            </span>
+          </p>
           <div className="flex flex-col md:flex-row justify-center items-stretch gap-8">
             <ProjectCards projects={projects} />
           </div>
         </div>
       </section>
 
-      <Contact />
+      <section id="philosophy" className="bg-black text-white py-24">
+        <div className="container mx-auto px-6 text-center">
+          <p className="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">
+            {t("ekza.philosophy.label")}
+          </p>
+          <h2 className="text-5xl font-bold mb-8">{t("ekza.philosophy.heading")}</h2>
+          <blockquote className="max-w-4xl mx-auto text-2xl md:text-3xl leading-relaxed font-light">
+            {t("ekza.philosophy.quote")}
+          </blockquote>
+        </div>
+      </section>
 
-      {/* Add spacer when footer is relative to prevent content from being hidden */}
-      <div className="h-16"></div>
-
-      <Footer position="relative" />
+      <Footer
+        position="relative"
+        brand="Ekza Space"
+        links={footerLinks}
+        studioCreditText={t("ekza.footer.creditText")}
+        studioCreditLabel={t("ekza.footer.creditLabel")}
+        studioCreditHref="https://wotori.io"
+      />
     </main>
   );
 }

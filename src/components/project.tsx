@@ -1,3 +1,5 @@
+import { useI18n } from "../i18n/i18n";
+
 interface ProjectContentProps {
   projectName: string;
   text: string;
@@ -14,12 +16,16 @@ interface ProjectProps {
 }
 
 function ProjectContent({ projectName, text, link }: ProjectContentProps) {
+  const { t } = useI18n();
+
   return (
     <div className="p-2">
         <p className="pt-4 w-auto py-2 text-2xl lg:text-5xl font-audiowide text-center">
-          <a href={link} target="_blank" className="link">
-            {projectName}
-            <p className="text-xs font-sans">click to open the project</p>
+          <a href={link} target="_blank" rel="noopener noreferrer" className="link">
+            <span>{projectName}</span>
+            <span className="block text-xs font-sans">
+              {t("common.projectOpenHint")}
+            </span>
           </a>
         </p>
       <p className="lg:text-base text-justify">{text}</p>
